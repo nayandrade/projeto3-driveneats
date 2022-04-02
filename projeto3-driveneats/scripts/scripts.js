@@ -6,110 +6,140 @@ let custoBebida;
 let custoSobremesa;
 let valor = 0
 
-function escolherPrato(pedido) {     
-    const borda = document
-    .querySelector(".comida")
-    .querySelector(".borda-selecionar");
+function escolherPrato(pedido) {
+    let borda = document
+        .querySelector(".comida")
+        .querySelector(".borda-selecionar");
 
     if (borda !== null) {
-        borda.classList.remove("borda-selecionar");                               
-    }   
-    pedido.classList.add("borda-selecionar");        
+        borda.classList.remove("borda-selecionar");
+    }
+    pedido.classList.add("borda-selecionar");
 
     let eFrango = pedido.classList.contains("frango");
     let eFeijoada = pedido.classList.contains("feijoada");
     let ePoke = pedido.classList.contains("poke");
 
-    if (eFrango === true){
-        prato = "Frango Ying Yang";
+    if (eFrango === true) {
+        prato = "Frango Yin Yang";
         custoPrato = 14.90;
-      } else if (eFeijoada === true){
+    } else if (eFeijoada === true) {
         prato = "Feijoada de mainha";
         custoPrato = 15.90;
-      } else if (ePoke === true){
+    } else if (ePoke === true) {
         prato = "Poke da moda";
         custoPrato = 16.90;
-      } else{
-        prato = "Vázio";        
+    } else {
+        prato = "Vazio";
         custoPrato = 0;
-      }
-    
-    
-    if(prato && bebida && sobremesa){
-      document.querySelector(".botão-cinza").classList.add("none");
-      document.querySelector(".botão-concluir").classList.remove("none");
-    }     
-            
+    }
+
+
+    if (prato && bebida && sobremesa) {
+        document.querySelector(".botao-cinza").classList.add("none");
+        document.querySelector(".botao-concluir").classList.remove("none");
+    }
 }
 
 
-function escolherBebida(pedido) {    
-    const borda = document
-    .querySelector(".bebida")
-    .querySelector(".borda-selecionar");    
+function escolherBebida(pedido) {
+    let borda = document
+        .querySelector(".bebida")
+        .querySelector(".borda-selecionar");
 
     if (borda !== null) {
         borda.classList.remove("borda-selecionar");
-                       
-    }   pedido.classList.add("borda-selecionar");    
+
+    } pedido.classList.add("borda-selecionar");
 
     let eCoca = pedido.classList.contains("coquinha");
     let eSuco = pedido.classList.contains("suco");
     let eAgua = pedido.classList.contains("agua");
 
-    if (eCoca === true){
+    if (eCoca === true) {
         bebida = "Coquinha gelada";
         custoBebida = 4.90;
-      } else if (eSuco === true){
+    } else if (eSuco === true) {
         bebida = "Suco de pó";
         custoBebida = 5.90;
-      } else if (eAgua === true){
+    } else if (eAgua === true) {
         bebida = "Água da torneira";
         custoBebida = 3.90;
-      } else{
-        bebida = "Vázio";        
+    } else {
+        bebida = "Vazio";
         custoBebida = 0;
-      }
-    
-    if(prato && bebida && sobremesa){
-      document.querySelector(".botão-cinza").classList.add("none");
-      document.querySelector(".botão-concluir").classList.remove("none");
-    } 
+    }
+
+    if (prato && bebida && sobremesa) {
+        document.querySelector(".botao-cinza").classList.add("none");
+        document.querySelector(".botao-concluir").classList.remove("none");
+    }
 }
 
 function escolherSobremesa(pedido) {
-    
-    const borda = document
-    .querySelector(".sobremesa")
-    .querySelector(".borda-selecionar");
+
+    let borda = document
+        .querySelector(".sobremesa")
+        .querySelector(".borda-selecionar");
 
     if (borda !== null) {
         borda.classList.remove("borda-selecionar");
-                       
-    }   pedido.classList.add("borda-selecionar");  
-    
-    let ePudim = pedido.classList.contains("coquinha");
-    let eSorvete = pedido.classList.contains("suco");
-    let eAcucar = pedido.classList.contains("agua");
 
-    if (ePudim === true){
-        sobremesa = "Coquinha gelada";
-        custoSobremesa = 4.90;
-      } else if (eSorvete === true){
-        sobremesa = "Suco de pó";
-        custoSobremesa = 5.90;
-      } else if (eAcucar === true){
-        sobremesa = "Água da torneira";
-        custoSobremesa = 3.90;
-      } else{
-        sobremesa = "Vázio";        
+    } pedido.classList.add("borda-selecionar");
+
+    let ePudim = pedido.classList.contains("pudim");
+    let eSorvete = pedido.classList.contains("sorvete");
+    let eAcucar = pedido.classList.contains("acucar");
+
+    if (ePudim === true) {
+        sobremesa = "Pudim";
+        custoSobremesa = 7.90;
+    } else if (eSorvete === true) {
+        sobremesa = "Sorvete";
+        custoSobremesa = 8.90;
+    } else if (eAcucar === true) {
+        sobremesa = "Torrão de acúcar";
+        custoSobremesa = 1.90;
+    } else {
+        sobremesa = "Vazio";
         custoSobremesa = 0;
-      }
-    
-    if(prato && bebida && sobremesa){
-      document.querySelector(".botão-cinza").classList.add("none");
-      document.querySelector(".botão-concluir").classList.remove("none");
-    } 
+    }
+
+    if (prato && bebida && sobremesa) {
+        document.querySelector(".botao-cinza").classList.add("none");
+        document.querySelector(".botao-concluir").classList.remove("none");
+    }
 }
 
-//function botaoFinalizar() {}
+function finalizarPedido() {
+    valor = custoPrato + custoBebida + custoSobremesa;
+    
+    document.querySelector(".confirmar-pedido").classList.remove("none");
+
+    document.querySelector(".pedido-comida").innerHTML = prato;
+    document.querySelector(".custo-prato").innerHTML = custoPrato.toFixed(2);
+
+    document.querySelector(".pedido-bebida").innerHTML = bebida;
+    document.querySelector(".custo-bebida").innerHTML = custoBebida.toFixed(2);
+
+    document.querySelector(".pedido-sobremesa").innerHTML = sobremesa;
+    document.querySelector(".custo-sobremesa").innerHTML = custoSobremesa.toFixed(2);
+
+    document.querySelector(".custo-total").innerHTML = valor.toFixed(2);
+}
+
+function cancelarPedido() {    
+    document.querySelector(".confirmar-pedido").classList.add("none");
+}
+
+function enviarPedido(){
+    let nome = prompt("Seu nome?");
+    let endereco = prompt("Qual é o seu endereço?");
+    let pagamento = prompt("Forma de pagamento?");
+  
+    let mensagem = "Olá, gostaria de fazer o pedido:" + "%0aPrato: " + prato + "%0aBebida: " + bebida + "%0aSobremesa: " + sobremesa + "%0aCliente: " + nome + "%0aEndereço: " + endereco + "%0aForma de pagamento: " + pagamento + "%0aTotal: " + valor.toFixed(2) +" Reais";
+  
+    window.open("http://wa.me/+5581998204352?text=" + mensagem);
+  }
+
+

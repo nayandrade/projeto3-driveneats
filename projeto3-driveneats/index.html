@@ -178,12 +178,46 @@
        
 
     </div>
+    <div class="confirmar-pedido none">
+        <div class="lista-de-pedidos">
+            <h6><strong>Confirme seu pedido</strong></h6>
+            <div class="between">
+                <p class="pedido-comida"></p>
+                <p class="custo-prato"></p>
+            </div>
+            <div class="between">
+                <p class="pedido-bebida"></p>
+                <p class="custo-bebida"></p>
+            </div>
+            <div class="between">
+                <p class="pedido-sobremesa"></p>
+                <p class="custo-sobremesa"></p>
+            </div>
+            <div class="between">
+                <p class="total">Total</p>
+                <p class="custo-total"></p>
+            </div>
+            <div class="botao-pedir" onclick="enviarPedido()">
+                <p class="verde">Tudo certo, pode pedir!</p>
+            </div>
+            <div class="botao-cancelar">
+                <h6 class="cancelar" onclick="cancelarPedido()">cancelar</h6>
+            </div>
+            
+
+        
+
+
+        </div>
+
+
+    </div>
     <footer>
         <div class="botao-cinza">
             <p class="white">Selecione os 3 itens<br>para fechar o pedido</p>          
         </div>
 
-        <div class="botao-concluir none">                      
+        <div class="botao-concluir none" onclick="finalizarPedido()">                      
             <p class="white"><strong>Fechar pedido</strong></p>
         </div>       
 
