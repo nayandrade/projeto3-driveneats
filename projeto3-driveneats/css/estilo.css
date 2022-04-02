@@ -98,7 +98,7 @@ footer {
     
 }
 
-.botao {
+.botao-cinza {
     background-color: #CBCBCB;
     width: 80%;
     height: 40px;
@@ -106,13 +106,22 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     border-radius: 21px;
-    
-    
+    cursor: pointer;    
 }
 
-.concluir {
-    display: none;     
+.botao-concluir {
+    background-color: #32B72F;
+    width: 80%;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 21px;
+    cursor: pointer;     
 }
 
 .fechar {
@@ -138,7 +147,6 @@ span {
 .escolha {
     display: flex;    
     overflow-x: scroll;
-    justify-content: space-between;
     align-items: center;
     padding: 10px
     
@@ -151,10 +159,15 @@ span {
     margin: 0 8px;
     background-color: #ffffff;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
-    box-shadow: inset 0 0 0 0 #32B72F;
     cursor: pointer
+}
 
+.borda-selecionar {
+    box-shadow: inset 0 0 0 5px #32B72F;
+}
 
+.borda-selecionar ion-icon {
+    display: inline;
 }
 
 .prato img {
@@ -181,8 +194,11 @@ span {
     
 }
 
-.detalhe ion-icon {
-    display: none;
+.none {
+    display: none
+}
+
+ion-icon {       
     color: #32B72F;
     font-size: 15px;
 }
