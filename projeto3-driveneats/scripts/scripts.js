@@ -98,7 +98,7 @@ function escolherSobremesa(pedido) {
         sobremesa = "Sorvete";
         custoSobremesa = 8.90;
     } else if (eAcucar === true) {
-        sobremesa = "Torrão de acúcar";
+        sobremesa = "Torrão de açúcar";
         custoSobremesa = 1.90;
     } else {
         sobremesa = "Vazio";
@@ -142,7 +142,7 @@ function enviarPedido() {
         "%0a- Bebida: " + bebida + "\n" +
         "%0a- Sobremesa: " + sobremesa + "\n" +
         "%0aTotal: R$ " + valor.toFixed(2) + "\n" +
-        "%0aNome: " + nome + "\n" +
+        "%0a%0aNome: " + nome + "\n" +
         "%0aEndereço: " + endereco;
 
 
