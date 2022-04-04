@@ -63,7 +63,7 @@ function escolherBebida(pedido) {
         bebida = "Suco de pó";
         custoBebida = 5.90;
     } else if (eAgua === true) {
-        bebida = "Água da torneira";
+        bebida = "Água mineral";
         custoBebida = 3.90;
     } else {
         bebida = "Vazio";
@@ -113,7 +113,7 @@ function escolherSobremesa(pedido) {
 
 function finalizarPedido() {
     valor = custoPrato + custoBebida + custoSobremesa;
-    
+
     document.querySelector(".confirmar-pedido").classList.remove("none");
 
     document.querySelector(".pedido-comida").innerHTML = prato;
@@ -128,18 +128,26 @@ function finalizarPedido() {
     document.querySelector(".custo-total").innerHTML = valor.toFixed(2);
 }
 
-function cancelarPedido() {    
+function cancelarPedido() {
     document.querySelector(".confirmar-pedido").classList.add("none");
 }
 
-function enviarPedido(){
+function enviarPedido() {
     let nome = prompt("Seu nome?");
     let endereco = prompt("Qual é o seu endereço?");
-    let pagamento = prompt("Forma de pagamento?");
-  
-    let mensagem = "Olá, gostaria de fazer o pedido:" + "%0aPrato: " + prato + "%0aBebida: " + bebida + "%0aSobremesa: " + sobremesa + "%0aCliente: " + nome + "%0aEndereço: " + endereco + "%0aForma de pagamento: " + pagamento + "%0aTotal: " + valor.toFixed(2) +" Reais";
-  
+
+
+    let mensagem = "Olá, gostaria de fazer o pedido:" + "\n" +
+        "%0a- Prato: " + prato + "\n" +
+        "%0a- Bebida: " + bebida + "\n" +
+        "%0a- Sobremesa: " + sobremesa + "\n" +
+        "%0aTotal: R$ " + valor.toFixed(2) + "\n" +
+        "%0aNome: " + nome + "\n" +
+        "%0aEndereço: " + endereco;
+
+
+
     window.open("http://wa.me/+5581998204352?text=" + mensagem);
-  }
+}
 
 

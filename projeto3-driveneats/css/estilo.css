@@ -72,7 +72,7 @@ p {
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
     font-size: 20px;
-    
+
 }
 
 
@@ -153,12 +153,12 @@ footer {
     background-color: #50D074;
     min-width: 80%;
     min-height: 52px;
-    border-radius: 52px;    
+    border-radius: 52px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    
+
 }
 
 .container {
@@ -198,6 +198,7 @@ footer {
     width: 144px;
     height: 87px;
     margin: 18px 14px 4px 14px;
+    border-radius: 4px;
 
 }
 
@@ -236,7 +237,7 @@ ion-icon {
     padding: 5px 0;
 }
 
-.lista-de-pedidos{
+.lista-de-pedidos {
     width: 353px;
     height: 377px;
     background-color: #50D074;
@@ -255,14 +256,20 @@ ion-icon {
     margin: 8px 0;
 }
 
-.pedido-comida, .pedido-bebida, .pedido-sobremesa, .custo-prato, .custo-bebida, .custo-sobremesa {
+.pedido-comida,
+.pedido-bebida,
+.pedido-sobremesa,
+.custo-prato,
+.custo-bebida,
+.custo-sobremesa {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     color: #ffffff;
     font-size: 22px;
 }
 
-.total, .custo-total {
+.total,
+.custo-total {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     color: #ffffff;
